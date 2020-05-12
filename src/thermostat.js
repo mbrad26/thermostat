@@ -8,6 +8,7 @@ class Thermostat {
     this.MINIMUM_TEMPERATURE = 10;
     this.powerSavingMode = true;
     this.temperature = this.DEFAULT_TEMPERATURE;
+    this.MEDIUM_ENERGY_USAGE_LIMIT = 18;
   }
 
   getCurrentTemperature() {
@@ -40,6 +41,18 @@ class Thermostat {
 
   switchPowerSavingModeOn() {
     this.powerSavingMode = true;
+  }
+
+  energyUsage() {
+    if (this.temperature < this.MEDIUM_ENERGY_USAGE_LIMIT) {
+      return 'low-usage';
+    }
+
+    if (this.temperature >= this.MEDIUM_ENERGY_USAGE_LIMIT && this.temperature <= this.MAX_LIMIT_PSM_ON) {
+      return 'medium-usage';
+    }
+
+    return 'high-usage';
   }
 
   isMinimumTemperature() {
