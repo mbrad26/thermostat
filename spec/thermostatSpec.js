@@ -50,6 +50,16 @@ describe('Thermostat', function () {
     expect(thermostat.isPowerSavingModeOn()).toBe(true);
   });
 
+  it('has reset method', function () {
+    for (let i = 0; i < 5; i++) {
+      thermostat.up();
+    }
+
+    thermostat.resetTemperature();
+
+    expect(thermostat.getCurrentTemperature()).toEqual(20);
+  });
+
   describe('when PSM is ON', function () {
     it('has an upper limit of 25 degrees', function () {
       for (let i = 0; i < 6; i++) {
