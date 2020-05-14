@@ -1,3 +1,16 @@
+body {
+  font-family: "Cinzel";
+  font-size: 22px;
+}
+
+.jumbotron {
+  text-align: center;
+}
+
+#current-city {
+  /* width: 75px; */
+}
+
 .low-usage {
   color: green;
 }
