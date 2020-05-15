@@ -90,7 +90,7 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
-  puma (~> 4.0)
+  puma
   rspec
   rubocop (= 0.79.0)
   selenium-webdriver
